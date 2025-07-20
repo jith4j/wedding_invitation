@@ -10,6 +10,7 @@ import axios from 'axios';
 const ChristianWedding = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
   const [showRSVP, setShowRSVP] = useState(false);
+  const [isSubmittingRSVP, setIsSubmittingRSVP] = useState(false);
   const [rsvpData, setRsvpData] = useState({
     name: '',
     email: '',
@@ -17,12 +18,29 @@ const ChristianWedding = () => {
     attendance: '',
     dietary: ''
   });
-  const [weatherData] = useState({
+  const [weatherData, setWeatherData] = useState({
     temp: 28,
     condition: 'Partly Cloudy',
     humidity: 65
   });
   const { toast } = useToast();
+
+  // Fetch weather data
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/weather/Vettucaud`
+        );
+        setWeatherData(response.data);
+      } catch (error) {
+        console.error('Weather fetch error:', error);
+        // Keep default weather data on error
+      }
+    };
+    
+    fetchWeather();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
