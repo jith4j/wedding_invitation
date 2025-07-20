@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Card } from './ui/card';
 
-const CountdownTimer = ({ targetDate, title, isMain = false }) => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+const CountdownTimer = ({ targetDate, title }) => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -14,8 +13,7 @@ const CountdownTimer = ({ targetDate, title, isMain = false }) => {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
         });
       }
     }, 1000);
@@ -24,67 +22,85 @@ const CountdownTimer = ({ targetDate, title, isMain = false }) => {
   }, [targetDate]);
 
   return (
-    <Card className={`p-6 bg-white/20 backdrop-blur-lg border-white/30 ${isMain ? 'transform hover:scale-105' : ''} transition-all duration-300`}>
-      <h3 className={`text-center font-serif mb-4 ${isMain ? 'text-xl' : 'text-lg'} font-semibold text-white`}>
+    <div className="text-center">
+      <h3 className="text-sm font-light text-gray-600 mb-6 tracking-wide uppercase">
         {title}
       </h3>
-      <div className="grid grid-cols-4 gap-2 text-center">
+      <div className="flex justify-center gap-8">
         {Object.entries(timeLeft).map(([unit, value]) => (
-          <div key={unit} className="bg-white/10 rounded-lg p-2">
-            <div className={`${isMain ? 'text-2xl' : 'text-xl'} font-bold text-white`}>
+          <div key={unit} className="text-center">
+            <div className="text-3xl font-light text-gray-900 mb-1">
               {value}
             </div>
-            <div className="text-xs text-white/80 capitalize">{unit}</div>
+            <div className="text-xs font-light text-gray-500 uppercase tracking-wide">{unit}</div>
           </div>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };
 
+const DoveIllustration = () => (
+  <div className="flex justify-center mb-12">
+    <svg
+      width="60"
+      height="40"
+      viewBox="0 0 60 40"
+      fill="none"
+      className="text-gray-400"
+    >
+      <path
+        d="M30 8C35 6 45 8 52 15C48 18 42 20 35 19C32 25 28 30 20 32C15 30 12 25 15 20C18 18 22 16 25 15C27 12 28 10 30 8Z"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+      <path
+        d="M25 15C22 18 18 20 12 19C8 16 6 12 8 8C12 6 18 8 22 12"
+        stroke="currentColor"
+        strokeWidth="1"
+        fill="none"
+      />
+      <circle cx="28" cy="12" r="1" fill="currentColor" />
+    </svg>
+  </div>
+);
+
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-900/50 via-purple-900/40 to-pink-900/50"></div>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-white px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        
+        {/* Dove Illustration */}
+        <DoveIllustration />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
         {/* Main Title */}
-        <div className="mb-12">
-          <h1 className="font-serif text-6xl md:text-8xl font-light text-white mb-4 animate-fade-in">
-            Jith <span className="text-rose-300">&</span> Pooja
+        <div className="mb-20">
+          <h1 className="text-5xl md:text-7xl font-extralight text-gray-900 mb-4 tracking-tight">
+            Jith & Pooja
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 font-light">
+          <div className="w-16 h-px bg-gray-300 mx-auto mb-6"></div>
+          <p className="text-lg font-light text-gray-600 tracking-wide">
             Two hearts, Two traditions, One beautiful journey
           </p>
         </div>
 
         {/* Countdown Timers */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 max-w-2xl mx-auto">
           <CountdownTimer 
             targetDate="2025-08-25T11:00:00"
             title="Christian Wedding"
-            isMain={true}
           />
           <CountdownTimer 
             targetDate="2025-08-28T10:15:00"
             title="Hindu Wedding"
-            isMain={true}
           />
         </div>
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
       </div>

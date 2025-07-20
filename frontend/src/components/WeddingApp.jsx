@@ -28,30 +28,30 @@ const WeddingApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen bg-white">
       <Navbar scrolled={scrolled} onNavigate={scrollToSection} />
       
       <section id="home">
         <HeroSection />
       </section>
 
-      <section id="invitation" className="py-16">
+      <section id="invitation" className="py-24">
         <InvitationCard />
       </section>
 
-      <section id="christian-wedding" className="py-16">
+      <section id="christian-wedding" className="py-24 bg-gray-50">
         <ChristianWedding />
       </section>
 
-      <section id="hindu-wedding" className="py-16">
+      <section id="hindu-wedding" className="py-24">
         <HinduWedding />
       </section>
 
-      <section id="send-message" className="py-16">
+      <section id="send-message" className="py-24 bg-gray-50">
         <SendMessage />
       </section>
 
-      <section id="faq" className="py-16">
+      <section id="faq" className="py-24">
         <FAQ />
       </section>
 
