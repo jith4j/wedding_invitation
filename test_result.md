@@ -217,38 +217,47 @@ frontend:
     file: "/app/frontend/src/components/ChristianWedding.jsx"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to replace hardcoded weather with real data"
+        - working: "NA"
+          agent: "main"
+          comment: "Integrated real weather API data - added axios call to backend weather endpoint with fallback handling"
 
   - task: "Weather API integration"
-    implemented: false
+    implemented: true
     working: "NA"
     file: "/app/frontend/src/components/HinduWedding.jsx"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to replace hardcoded weather with real data"
+        - working: "NA"
+          agent: "main"
+          comment: "Integrated real weather API data - added axios call to backend weather endpoint with fallback handling"
 
   - task: "Google Calendar links integration"
-    implemented: false
+    implemented: true
     working: "NA"
     file: "/app/frontend/src/components/ChristianWedding.jsx"
     stuck_count: 0
     priority: "low"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to create Google Calendar links"
+        - working: "NA"
+          agent: "main"
+          comment: "Added Google Calendar integration - clicking Add to Calendar opens Google Calendar with pre-filled event details"
 
   - task: "Google Calendar links integration"
-    implemented: false
+    implemented: true
     working: "NA"
     file: "/app/frontend/src/components/HinduWedding.jsx"
     stuck_count: 0
