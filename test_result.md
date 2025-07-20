@@ -252,9 +252,9 @@ metadata:
 
 test_plan:
   current_focus:
-    - "RSVP API endpoint for SheetDB integration"
     - "RSVP form connection to backend"
     - "EmailJS integration for messages"
+    - "Google Maps integration"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
