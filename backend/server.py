@@ -37,6 +37,26 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# RSVP Models
+class RSVPCreate(BaseModel):
+    ceremony: str  # "Christian" or "Hindu"
+    name: str
+    email: str
+    attending: str  # "Yes" or "No"
+    guests: str
+    dietary: Optional[str] = ""
+
+class RSVPResponse(BaseModel):
+    success: bool
+    message: str
+
+# Weather Models
+class WeatherResponse(BaseModel):
+    temp: float
+    condition: str
+    humidity: int
+    location: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
