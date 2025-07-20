@@ -101,3 +101,158 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: Integrate wedding website with provided APIs - RSVP storage (SheetDB), EmailJS for messages, Google Maps, Weather API, and Google Calendar links.
+
+backend:
+  - task: "RSVP API endpoint for SheetDB integration"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Starting RSVP SheetDB integration implementation"
+
+  - task: "Weather API integration endpoint"
+    implemented: false
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Planning weather API integration"
+
+frontend:
+  - task: "RSVP form connection to backend"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to connect RSVP forms to SheetDB API"
+
+  - task: "RSVP form connection to backend"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to connect RSVP forms to SheetDB API"
+
+  - task: "EmailJS integration for messages"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/SendMessage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to integrate EmailJS for message sending"
+
+  - task: "Google Maps integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to add interactive Google Maps"
+
+  - task: "Google Maps integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to add interactive Google Maps"
+
+  - task: "Weather API integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to replace hardcoded weather with real data"
+
+  - task: "Weather API integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to replace hardcoded weather with real data"
+
+  - task: "Google Calendar links integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to create Google Calendar links"
+
+  - task: "Google Calendar links integration"
+    implemented: false
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: false
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Need to create Google Calendar links"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "RSVP API endpoint for SheetDB integration"
+    - "RSVP form connection to backend"
+    - "EmailJS integration for messages"
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "main"
+      message: "Starting integration of wedding website with provided APIs. Beginning with RSVP storage using SheetDB, then EmailJS, Google Maps, Weather API, and Google Calendar links."
