@@ -262,3 +262,5 @@ test_plan:
 agent_communication:
     - agent: "main"
       message: "Starting integration of wedding website with provided APIs. Beginning with RSVP storage using SheetDB, then EmailJS, Google Maps, Weather API, and Google Calendar links."
+    - agent: "testing"
+      message: "Backend testing completed successfully. All implemented endpoints are working correctly: 1) RSVP endpoint successfully integrates with SheetDB API and handles both Christian/Hindu wedding data with proper validation. 2) Weather endpoint successfully integrates with OpenWeatherMap API with proper fallback mechanism. 3) Root endpoint working correctly. Created comprehensive backend_test.py with 7 test cases - all passed. Backend implementation is solid and ready for frontend integration."
