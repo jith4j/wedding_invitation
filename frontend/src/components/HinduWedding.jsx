@@ -60,15 +60,47 @@ const HinduWedding = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleRSVPSubmit = (e) => {
+  const handleRSVPSubmit = async (e) => {
     e.preventDefault();
-    console.log('Hindu Wedding RSVP Data:', rsvpData);
-    toast({
-      title: "RSVP Submitted",
-      description: "Thank you for your response. We look forward to celebrating with you.",
-    });
-    setRsvpData({ name: '', email: '', guests: '1', attendance: '', dietary: '' });
-    setShowRSVP(false);
+    setIsSubmittingRSVP(true);
+    
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_URL}/api/rsvp`,
+        {
+          ceremony: 'Hindu',
+          name: rsvpData.name,
+          email: rsvpData.email,
+          attending: rsvpData.attendance,
+          guests: rsvpData.guests,
+          dietary: rsvpData.dietary
+        }
+      );
+
+      if (response.data.success) {
+        toast({
+          title: "RSVP Submitted Successfully!",
+          description: response.data.message,
+        });
+        setRsvpData({ name: '', email: '', guests: '1', attendance: '', dietary: '' });
+        setShowRSVP(false);
+      } else {
+        toast({
+          title: "RSVP Submission Failed",
+          description: response.data.message,
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('RSVP submission error:', error);
+      toast({
+        title: "RSVP Submission Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmittingRSVP(false);
+    }
   };
 
   const handleCalendarAdd = () => {
