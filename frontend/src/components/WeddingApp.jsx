@@ -35,23 +35,23 @@ const WeddingApp = () => {
         <HeroSection />
       </section>
 
-      <section id="invitation" className="py-24">
+      <section id="invitation" className="py-16 bg-gray-50">
         <InvitationCard />
       </section>
 
-      <section id="christian-wedding" className="py-24 bg-gray-50">
+      <section id="christian-wedding" className="bg-gray-50">
         <ChristianWedding />
       </section>
 
-      <section id="hindu-wedding" className="py-24">
+      <section id="hindu-wedding" className="bg-gray-50">
         <HinduWedding />
       </section>
 
-      <section id="send-message" className="py-24 bg-gray-50">
+      <section id="send-message" className="py-16 bg-white">
         <SendMessage />
       </section>
 
-      <section id="faq" className="py-24">
+      <section id="faq" className="py-16 bg-gray-50">
         <FAQ />
       </section>
 
