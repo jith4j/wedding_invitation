@@ -12,6 +12,7 @@ const SendMessage = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [previousMessages] = useState([
     {
       id: 1,
