@@ -104,11 +104,21 @@ const HinduWedding = () => {
   };
 
   const handleCalendarAdd = () => {
-    alert('Calendar integration will be implemented with Google Calendar API');
+    const title = "Jith and Pooja - Hindu Wedding (Muhurtham)";
+    const details = "Join us for the Hindu wedding ceremony (Vivah Sanskar) at Al Saj Arena, Trivandrum KL";
+    const location = "Al Saj Arena, Trivandrum, Kerala";
+    const startDate = "20250828T044500Z"; // 10:15 AM IST = 04:45 AM UTC
+    const endDate = "20250828T051500Z"; // 10:45 AM IST = 05:15 AM UTC
+    
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+    
+    window.open(googleCalendarUrl, '_blank');
   };
 
   const handleDirections = () => {
-    alert('Google Maps directions will open here');
+    const location = "Al Saj Arena, Trivandrum, Kerala";
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    window.open(googleMapsUrl, '_blank');
   };
 
   const handleSendMessage = () => {
