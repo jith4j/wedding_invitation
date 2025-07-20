@@ -11,68 +11,69 @@ const FAQ = () => {
     {
       id: 'item-1',
       question: 'What is the dress code for both ceremonies?',
-      answer: 'For the Christian wedding, formal western attire is preferred - suits for men and dresses or elegant outfits for women. For the Hindu wedding, traditional Indian attire is encouraged - sarees, lehengas, or salwar suits for women, and kurtas, sherwanis, or dhotis for men. Bright colors are welcome for the Hindu ceremony!'
+      answer: 'For the Christian wedding, formal western attire is preferred. For the Hindu wedding, traditional Indian attire is encouraged. Bright colors are welcome for the Hindu ceremony.'
     },
     {
       id: 'item-2',
       question: 'Can I bring a plus one?',
-      answer: 'We would love to celebrate with you and your loved ones! Please specify the number of guests when you RSVP so we can ensure adequate arrangements. If your invitation specifically mentions "and guest" or family members, then yes! If not, please reach out to us directly.'
+      answer: 'Please specify the number of guests when you RSVP so we can ensure adequate arrangements. If your invitation specifically mentions additional guests, then yes.'
     },
     {
       id: 'item-3',
       question: 'Is there transportation between the two venues?',
-      answer: 'Both ceremonies are in Kerala, but at different locations. The Christian wedding is at Madre De Deus Church in Vettucaud, and the Hindu wedding is at Al Saj Arena in Trivandrum. We recommend using the Google Maps links provided for directions. Local transportation and accommodation recommendations are available upon request.'
+      answer: 'Both ceremonies are in Kerala, but at different locations. We recommend using the Google Maps links provided for directions. Local transportation recommendations are available upon request.'
     },
     {
       id: 'item-4',
       question: 'Are children welcome at the ceremonies?',
-      answer: 'Absolutely! We love having families celebrate with us. Both venues are child-friendly. Please do mention the number of children when you RSVP so we can make appropriate seating and meal arrangements.'
+      answer: 'Absolutely. We love having families celebrate with us. Both venues are child-friendly. Please mention the number of children when you RSVP.'
     },
     {
       id: 'item-5',
       question: 'What about dietary restrictions?',
-      answer: 'We want everyone to enjoy the celebration! Please let us know about any dietary restrictions, allergies, or preferences when you RSVP. We will have vegetarian options available at both ceremonies, and can accommodate most special dietary needs with advance notice.'
+      answer: 'Please let us know about any dietary restrictions when you RSVP. We will have vegetarian options available at both ceremonies, and can accommodate most special dietary needs.'
     },
     {
       id: 'item-6',
       question: 'Can I take photos during the ceremonies?',
-      answer: 'We would love for you to capture and share memories! Feel free to take photos during the reception and celebration portions. However, please be respectful during the actual ceremony proceedings. We will have professional photographers capturing the key moments to share with everyone later.'
+      answer: 'Feel free to take photos during the reception portions. Please be respectful during the actual ceremony proceedings. We will have professional photographers capturing key moments.'
     },
     {
       id: 'item-7',
-      question: 'What if I can only attend one of the ceremonies?',
-      answer: 'We completely understand! Please RSVP separately for each ceremony you plan to attend. Whether you can join us for one or both celebrations, your presence will make our day special.'
+      question: 'What if I can only attend one ceremony?',
+      answer: 'We completely understand. Please RSVP separately for each ceremony you plan to attend. Whether you join us for one or both celebrations, your presence will make our day special.'
     },
     {
       id: 'item-8',
       question: 'Is there a gift registry?',
-      answer: 'Your presence is the greatest gift of all! We are grateful to have you share in our joy. If you wish to honor us with a gift, a contribution toward our future together would be deeply appreciated, but it is certainly not expected.'
+      answer: 'Your presence is the greatest gift. If you wish to honor us with a gift, a contribution toward our future together would be deeply appreciated, but it is not expected.'
     }
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-serif mb-4 bg-gradient-to-r from-rose-600 to-purple-600 bg-clip-text text-transparent">
+    <div className="max-w-3xl mx-auto px-6">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl font-light text-gray-900 mb-4 tracking-tight">
           Frequently Asked Questions
         </h2>
-        <p className="text-lg text-gray-600">
-          Everything you need to know about our special celebrations
+        <div className="w-12 h-px bg-gray-300 mx-auto mb-6"></div>
+        <p className="text-base font-light text-gray-600">
+          Everything you need to know about our celebrations
         </p>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-lg border-white/20 shadow-lg rounded-lg p-6">
-        <Accordion type="single" collapsible className="w-full space-y-2">
-          {faqItems.map((item) => (
+      <div className="bg-white border border-gray-100">
+        <Accordion type="single" collapsible className="w-full">
+          {faqItems.map((item, index) => (
             <AccordionItem 
               key={item.id} 
               value={item.id}
-              className="border border-gray-100 rounded-lg px-4 data-[state=open]:bg-gradient-to-r data-[state=open]:from-rose-50 data-[state=open]:to-purple-50"
+              className={`px-8 py-2 ${index !== faqItems.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
-              <AccordionTrigger className="text-left font-medium text-gray-800 hover:text-rose-600 transition-colors duration-200">
+              <AccordionTrigger className="text-left font-light text-gray-900 hover:text-gray-700 transition-colors duration-200 text-base py-6">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+              <AccordionContent className="text-gray-600 font-light leading-relaxed pb-6 text-sm">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>
@@ -81,21 +82,15 @@ const FAQ = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="mt-12 text-center">
-        <div className="bg-gradient-to-r from-rose-50 to-purple-50 rounded-lg p-8 border border-rose-100">
-          <h3 className="text-2xl font-serif text-gray-800 mb-4">Still have questions?</h3>
-          <p className="text-gray-600 mb-6">
-            We're here to help! Don't hesitate to reach out if you need any additional information.
+      <div className="mt-16 text-center">
+        <div className="bg-gray-50 border border-gray-100 p-8">
+          <h3 className="text-lg font-light text-gray-900 mb-4">Still have questions?</h3>
+          <p className="text-sm font-light text-gray-600 mb-6">
+            We're here to help. Don't hesitate to reach out if you need any additional information.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <div className="flex items-center justify-center gap-2 text-gray-700">
-              <span>📧</span>
-              <span>jithandpooja@wedding.com</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-gray-700">
-              <span>📱</span>
-              <span>+91 98765 43210</span>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm font-light text-gray-700">
+            <div>jithandpooja@wedding.com</div>
+            <div>+91 98765 43210</div>
           </div>
         </div>
       </div>
