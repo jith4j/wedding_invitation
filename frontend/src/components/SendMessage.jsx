@@ -128,9 +128,10 @@ const SendMessage = () => {
 
             <Button 
               type="submit" 
-              className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-sm font-light rounded-none transition-colors duration-200"
+              disabled={isSubmitting}
+              className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-sm font-light rounded-none transition-colors duration-200 disabled:opacity-50"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </div>
