@@ -10,6 +10,7 @@ import axios from 'axios';
 const HinduWedding = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
   const [showRSVP, setShowRSVP] = useState(false);
+  const [isSubmittingRSVP, setIsSubmittingRSVP] = useState(false);
   const [rsvpData, setRsvpData] = useState({
     name: '',
     email: '',
@@ -17,12 +18,29 @@ const HinduWedding = () => {
     attendance: '',
     dietary: ''
   });
-  const [weatherData] = useState({
+  const [weatherData, setWeatherData] = useState({
     temp: 30,
     condition: 'Sunny',
     humidity: 70
   });
   const { toast } = useToast();
+
+  // Fetch weather data
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/api/weather/Trivandrum`
+        );
+        setWeatherData(response.data);
+      } catch (error) {
+        console.error('Weather fetch error:', error);
+        // Keep default weather data on error
+      }
+    };
+    
+    fetchWeather();
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
