@@ -35,14 +35,41 @@ const SendMessage = () => {
   ]);
   const { toast } = useToast();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Message data:', messageData);
-    toast({
-      title: "Message sent",
-      description: "Your heartfelt message has been delivered to Jith & Pooja.",
-    });
-    setMessageData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          guest_name: messageData.name,
+          guest_email: messageData.email,
+          guest_message: messageData.message
+        },
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('EmailJS result:', result);
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "Your heartfelt message has been delivered to Jith & Pooja.",
+      });
+      
+      setMessageData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Message failed to send",
+        description: "Please try again or contact the couple directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
