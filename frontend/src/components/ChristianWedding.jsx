@@ -241,10 +241,13 @@ const ChristianWedding = () => {
           {/* Maps Card */}
           <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
             <h4 className="text-lg font-light text-gray-900 mb-4">Location</h4>
-            <div className="bg-gray-50 rounded-xl h-32 flex items-center justify-center">
+            <div 
+              className="bg-gray-50 rounded-xl h-32 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+              onClick={handleDirections}
+            >
               <div className="text-center text-gray-500">
                 <div className="text-2xl mb-2">📍</div>
-                <p className="text-sm font-light">Google Maps Integration</p>
+                <p className="text-sm font-light">Click for Google Maps</p>
                 <p className="text-xs font-light">Madre De Deus Church</p>
               </div>
             </div>
