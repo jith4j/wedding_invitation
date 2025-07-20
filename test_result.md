@@ -262,11 +262,14 @@ frontend:
     file: "/app/frontend/src/components/HinduWedding.jsx"
     stuck_count: 0
     priority: "low"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
         - working: "NA"
           agent: "main"
           comment: "Need to create Google Calendar links"
+        - working: "NA"
+          agent: "main"
+          comment: "Added Google Calendar integration - clicking Add to Calendar opens Google Calendar with pre-filled event details"
 
 metadata:
   created_by: "main_agent"
