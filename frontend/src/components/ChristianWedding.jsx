@@ -104,11 +104,21 @@ const ChristianWedding = () => {
   };
 
   const handleCalendarAdd = () => {
-    alert('Calendar integration will be implemented with Google Calendar API');
+    const title = "Jith and Pooja - Christian Wedding";
+    const details = "Join us for the Christian wedding ceremony at Madre De Deus Church, Vettucaud KL";
+    const location = "Madre De Deus Church, Vettucaud, Kerala";
+    const startDate = "20250825T053000Z"; // 11:00 AM IST = 05:30 AM UTC
+    const endDate = "20250825T073000Z"; // 1:00 PM IST = 07:30 AM UTC
+    
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+    
+    window.open(googleCalendarUrl, '_blank');
   };
 
   const handleDirections = () => {
-    alert('Google Maps directions will open here');
+    const location = "Madre De Deus Church, Vettucaud, Kerala";
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+    window.open(googleMapsUrl, '_blank');
   };
 
   const handleSendMessage = () => {
