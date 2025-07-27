@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const CountdownTimer = ({ targetDate, title }) => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -13,7 +13,8 @@ const CountdownTimer = ({ targetDate, title }) => {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
         });
       }
     }, 1000);
@@ -26,11 +27,11 @@ const CountdownTimer = ({ targetDate, title }) => {
       <h3 className="text-sm font-light text-gray-600 mb-6 tracking-wide uppercase">
         {title}
       </h3>
-      <div className="flex justify-center gap-8">
+      <div className="flex justify-center gap-4">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <div key={unit} className="text-center">
-            <div className="text-3xl font-light text-gray-900 mb-1">
-              {value}
+            <div className="text-2xl md:text-3xl font-light text-gray-900 mb-1">
+              {value.toString().padStart(2, '0')}
             </div>
             <div className="text-xs font-light text-gray-500 uppercase tracking-wide">{unit}</div>
           </div>
