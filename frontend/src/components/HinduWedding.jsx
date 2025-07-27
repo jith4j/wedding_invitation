@@ -127,141 +127,124 @@ const HinduWedding = () => {
 
   return (
     <div className="bg-white">
-      <div className="max-w-lg mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-6 py-16">
         
         {/* Hero Section */}
-        <div className="text-center mb-8">
-          <div className="mb-6">
-            {/* Couple Illustration Placeholder */}
-            <div className="w-48 h-48 mx-auto bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl flex items-center justify-center mb-6">
-              <div className="text-6xl">🕉️</div>
+        <div className="text-center mb-16">
+          <div className="mb-8">
+            {/* Couple Illustration */}
+            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-orange-100 to-red-100 rounded-full flex items-center justify-center mb-6">
+              <div className="text-4xl">🕉️</div>
             </div>
           </div>
           
-          <h1 className="text-2xl font-light text-gray-900 mb-2">
+          <h1 className="text-3xl font-light text-gray-900 mb-4">
             Jith and Pooja - Hindu Wedding
           </h1>
           
-          <div className="text-sm font-light text-gray-600 mb-6">
-            <p>Thu 28 August at 10:15am GMT+5:30</p>
-            <p>Muhurtham: 10:15 AM - 10:45 AM</p>
+          <div className="text-base font-light text-gray-600 mb-8">
+            <p>Thursday, 28 August at 10:15am GMT+5:30</p>
             <p>Al Saj Arena, Trivandrum KL</p>
           </div>
           
-          {/* Apple-style Action Buttons */}
-          <div className="grid grid-cols-2 gap-3 mb-8">
-            <Button
-              onClick={handleSendMessage}
-              className="bg-gray-800/80 backdrop-blur-sm hover:bg-gray-800 text-white font-light py-4 rounded-2xl transition-all duration-200"
-            >
-              <span className="mr-2">💬</span>
-              Send a Note
-            </Button>
-            <Button
-              onClick={() => setShowRSVP(true)}
-              className="bg-gray-800/80 backdrop-blur-sm hover:bg-gray-800 text-white font-light py-4 rounded-2xl transition-all duration-200"
-            >
-              <span className="mr-2">📤</span>
-              RSVP
-            </Button>
-          </div>
-          
-          {/* Host Section */}
-          <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 mb-6">
-            <div className="flex items-center mb-3">
-              <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center mr-3">
-                <span className="text-white text-sm">💑</span>
-              </div>
-              <div className="text-left">
-                <p className="text-white font-light text-sm">Hosted by Jith & Pooja</p>
-                <p className="text-gray-300 font-light text-xs">Join us in celebrating our union</p>
-              </div>
-            </div>
-          </div>
+          {/* Single RSVP Button */}
+          <Button
+            onClick={() => setShowRSVP(true)}
+            className="bg-gray-900 hover:bg-gray-800 text-white font-light py-4 px-8 rounded-xl transition-all duration-200"
+          >
+            <span className="mr-2">📤</span>
+            RSVP
+          </Button>
         </div>
 
-        {/* Scroll Cards */}
-        <div className="space-y-4">
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12">
           
-          {/* Countdown Card */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-            <h3 className="text-lg font-light text-gray-900 mb-4 text-center">
-              Time Until Muhurtham
-            </h3>
-            <div className="flex justify-center gap-8">
-              {Object.entries(timeLeft).map(([unit, value]) => (
-                <div key={unit} className="text-center">
-                  <div className="text-2xl font-light text-gray-900 mb-1">{value}</div>
-                  <div className="text-xs font-light text-gray-500 uppercase">{unit}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Wedding Details Card */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-            <div className="text-center mb-4">
-              <div className="text-3xl mb-2">🕉️</div>
-              <h3 className="text-lg font-light text-gray-900">Vivah Sanskar</h3>
-            </div>
-            <div className="space-y-3 text-center text-sm font-light text-gray-600">
-              <p><span className="font-normal text-gray-900">Date:</span> Thursday, August 28, 2025</p>
-              <p><span className="font-normal text-gray-900">Muhurtham:</span> 10:15 AM - 10:45 AM</p>
-              <p><span className="font-normal text-gray-900">Venue:</span> Al Saj Arena</p>
-              <p>Trivandrum, Kerala</p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 mt-6">
-              <Button 
-                onClick={handleCalendarAdd}
-                className="bg-gray-900 hover:bg-gray-800 text-white font-light py-3 rounded-xl"
-              >
-                📅 Calendar
-              </Button>
-              <Button 
-                onClick={handleDirections}
-                variant="outline"
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 font-light py-3 rounded-xl"
-              >
-                🗺️ Directions
-              </Button>
-            </div>
-          </div>
-
-          {/* Weather Card */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-            <h4 className="text-lg font-light text-gray-900 mb-4">Weather Forecast</h4>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-3xl font-light text-gray-900">{weatherData.temp}°C</p>
-                <p className="text-sm font-light text-gray-600">{weatherData.condition}</p>
-                <p className="text-xs font-light text-gray-500">Humidity: {weatherData.humidity}%</p>
+          {/* Left Column - Wedding Details */}
+          <div className="space-y-8">
+            
+            {/* Wedding Details Card */}
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-4">🕉️</div>
+                <h3 className="text-xl font-light text-gray-900 mb-4">Vivah Sanskar</h3>
+                <div className="w-8 h-px bg-gray-300 mx-auto"></div>
               </div>
-              <div className="text-4xl">☀️</div>
+              <div className="space-y-4 text-center text-sm font-light text-gray-600">
+                <p><span className="font-normal text-gray-900">Date:</span> Thursday, August 28, 2025</p>
+                <p><span className="font-normal text-gray-900">Muhurtham:</span> 10:15 AM - 10:45 AM</p>
+                <p><span className="font-normal text-gray-900">Venue:</span> Al Saj Arena</p>
+                <p>Trivandrum, Kerala</p>
+              </div>
+
+              <div className="flex gap-4 mt-8">
+                <Button 
+                  onClick={handleCalendarAdd}
+                  className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-light py-3 rounded-xl"
+                >
+                  📅 Calendar
+                </Button>
+                <Button 
+                  onClick={handleDirections}
+                  variant="outline"
+                  className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 font-light py-3 rounded-xl"
+                >
+                  🗺️ Directions
+                </Button>
+              </div>
+            </div>
+
+            {/* Host Section */}
+            <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-xl">💑</span>
+                </div>
+                <div>
+                  <p className="font-light">Hosted by Jith & Pooja</p>
+                  <p className="text-gray-300 text-sm font-light">Join us in celebrating our union</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Maps Card */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-            <h4 className="text-lg font-light text-gray-900 mb-4">Location</h4>
+          {/* Right Column - Weather & Location */}
+          <div className="space-y-8">
+            
+            {/* Weather Card */}
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8">
+              <h4 className="text-xl font-light text-gray-900 mb-6 text-center">Weather Forecast</h4>
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-4xl font-light text-gray-900 mb-2">{weatherData.temp}°C</p>
+                  <p className="text-base font-light text-gray-700">{weatherData.condition}</p>
+                  <p className="text-sm font-light text-gray-600">Humidity: {weatherData.humidity}%</p>
+                </div>
+                <div className="text-6xl">☀️</div>
+              </div>
+            </div>
+
+            {/* Maps Card */}
             <div 
-              className="bg-gray-50 rounded-xl h-32 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 cursor-pointer hover:from-purple-100 hover:to-pink-100 transition-colors"
               onClick={handleDirections}
             >
-              <div className="text-center text-gray-500">
-                <div className="text-2xl mb-2">📍</div>
-                <p className="text-sm font-light">Click for Google Maps</p>
-                <p className="text-xs font-light">Al Saj Arena, Trivandrum</p>
+              <h4 className="text-xl font-light text-gray-900 mb-6 text-center">Location</h4>
+              <div className="text-center">
+                <div className="text-5xl mb-4">📍</div>
+                <p className="text-base font-light text-gray-700 mb-2">Click for Google Maps</p>
+                <p className="text-sm font-light text-gray-600">Al Saj Arena</p>
+                <p className="text-sm font-light text-gray-600">Trivandrum, Kerala</p>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
 
         {/* RSVP Status */}
-        <div className="mt-8 text-center">
-          <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4">
-            <p className="text-white font-light text-sm">6 Going • 2 Maybe</p>
+        <div className="mt-16 text-center">
+          <div className="bg-gray-100 rounded-2xl p-6 inline-block">
+            <p className="text-gray-700 font-light">6 Going • 2 Maybe</p>
           </div>
         </div>
 
