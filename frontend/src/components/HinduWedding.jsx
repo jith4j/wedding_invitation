@@ -148,14 +148,33 @@ const HinduWedding = () => {
             <p>Al Saj Arena, Trivandrum KL</p>
           </div>
           
-          {/* Light Theme RSVP Button */}
-          <Button
-            onClick={() => setShowRSVP(true)}
-            className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 font-light py-4 px-8 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
-          >
-            <span className="mr-2">📤</span>
-            RSVP
-          </Button>
+          {/* Enhanced RSVP Button with Gradient & Animation */}
+          <div className="relative">
+            <Button
+              onClick={() => setShowRSVP(true)}
+              className="bg-gradient-to-r from-orange-200 via-yellow-200 to-amber-200 hover:from-orange-300 hover:via-yellow-300 hover:to-amber-300 text-gray-800 border-0 font-medium py-6 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-pulse"
+              style={{
+                animation: 'gentle-pulse 2s ease-in-out infinite'
+              }}
+            >
+              <span className="mr-3 text-lg">🕉️</span>
+              <span className="text-lg">RSVP NOW</span>
+            </Button>
+          </div>
+
+          {/* Add custom CSS for animation */}
+          <style jsx>{`
+            @keyframes gentle-pulse {
+              0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+              }
+              50% {
+                transform: scale(1.02);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+              }
+            }
+          `}</style>
         </div>
 
         {/* Main Content Grid */}
