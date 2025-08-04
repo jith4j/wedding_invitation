@@ -33,7 +33,10 @@ const PhotoCarousel = () => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const casualPhotos = [
     '/images/casual1.jpg',
-    '/images/casual2.jpg'
+    '/images/casual2.jpg',
+    '/images/casual3.jpg',
+    '/images/casual4.jpg',
+    '/images/casual5.jpg'
   ];
 
   useEffect(() => {
