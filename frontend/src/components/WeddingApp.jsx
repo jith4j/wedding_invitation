@@ -136,19 +136,16 @@ const WeddingApp = () => {
         <InvitationCard />
       </section>
 
-      {/* Parallax Section 1 - Our Journey with Casual Photos Carousel */}
-      <ParallaxSection 
-        backgroundImage="/images/traditional1.jpg"
-        className="flex items-center justify-center"
-      >
+      {/* Our Journey Section with Carousel */}
+      <section id="our-journey" className="py-20 bg-gray-50">
         <div className="text-center text-gray-800 px-6 max-w-6xl mx-auto">
-          <h2 className="text-5xl font-light mb-8 animate-fade-in-up text-gray-900">Our Journey</h2>
-          <p className="text-xl font-light mb-12 animate-fade-in-up-delay text-gray-700 max-w-2xl mx-auto">
+          <h2 className="text-5xl font-light mb-8 text-gray-900">Our Journey</h2>
+          <p className="text-xl font-light mb-12 text-gray-700 max-w-2xl mx-auto">
             From casual moments to traditional celebrations, our love story unfolds
           </p>
           <PhotoCarousel />
         </div>
-      </ParallaxSection>
+      </section>
 
       <section id="christian-wedding" className="bg-white">
         <ChristianWedding />
