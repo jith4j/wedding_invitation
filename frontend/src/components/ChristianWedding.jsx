@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
@@ -15,8 +14,7 @@ const ChristianWedding = () => {
     name: '',
     email: '',
     guests: '1',
-    attendance: '',
-    dietary: ''
+    attending: ''
   });
   const [weatherData, setWeatherData] = useState({
     temp: 28,
@@ -71,9 +69,8 @@ const ChristianWedding = () => {
           ceremony: 'Christian',
           name: rsvpData.name,
           email: rsvpData.email,
-          attending: rsvpData.attendance,
-          guests: rsvpData.guests,
-          dietary: rsvpData.dietary
+          attending: rsvpData.attending,
+          guests: rsvpData.guests
         }
       );
 
@@ -82,7 +79,7 @@ const ChristianWedding = () => {
           title: "RSVP Submitted Successfully!",
           description: response.data.message,
         });
-        setRsvpData({ name: '', email: '', guests: '1', attendance: '', dietary: '' });
+        setRsvpData({ name: '', email: '', guests: '1', attending: '' });
         setShowRSVP(false);
       } else {
         toast({
@@ -133,7 +130,7 @@ const ChristianWedding = () => {
         <div className="text-center mb-16">
           <div className="mb-8">
             {/* Couple Illustration */}
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-amber-100 to-rose-100 rounded-full flex items-center justify-center mb-6">
+            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mb-6">
               <div className="text-4xl">💒</div>
             </div>
           </div>
@@ -147,10 +144,10 @@ const ChristianWedding = () => {
             <p>Madre De Deus Church, Vettucaud KL</p>
           </div>
           
-          {/* Single RSVP Button */}
+          {/* Updated RSVP Button with Soft Pastel */}
           <Button
             onClick={() => setShowRSVP(true)}
-            className="bg-gray-900 hover:bg-gray-800 text-white font-light py-4 px-8 rounded-xl transition-all duration-200"
+            className="bg-gradient-to-r from-blue-200 to-purple-200 hover:from-blue-300 hover:to-purple-300 text-blue-900 font-light py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <span className="mr-2">📤</span>
             RSVP
@@ -164,10 +161,10 @@ const ChristianWedding = () => {
           <div className="space-y-8">
             
             {/* Wedding Details Card */}
-            <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-light text-gray-900 mb-4">Sacred Union</h3>
-                <div className="w-8 h-px bg-gray-300 mx-auto"></div>
+                <div className="w-8 h-px bg-blue-300 mx-auto"></div>
               </div>
               <div className="space-y-4 text-center text-sm font-light text-gray-600">
                 <p><span className="font-normal text-gray-900">Date:</span> Monday, August 25, 2025</p>
@@ -179,14 +176,13 @@ const ChristianWedding = () => {
               <div className="flex gap-4 mt-8">
                 <Button 
                   onClick={handleCalendarAdd}
-                  className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-light py-3 rounded-xl"
+                  className="flex-1 bg-gradient-to-r from-cyan-200 to-blue-200 hover:from-cyan-300 hover:to-blue-300 text-cyan-900 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   📅 Calendar
                 </Button>
                 <Button 
                   onClick={handleDirections}
-                  variant="outline"
-                  className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 font-light py-3 rounded-xl"
+                  className="flex-1 bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 text-purple-900 border-purple-200 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   🗺️ Directions
                 </Button>
@@ -194,14 +190,14 @@ const ChristianWedding = () => {
             </div>
 
             {/* Host Section */}
-            <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
+            <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-6 text-indigo-900">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mr-4">
                   <span className="text-xl">💑</span>
                 </div>
-                <div>
+                <div className="text-center">
                   <p className="font-light">Hosted by Jith & Pooja</p>
-                  <p className="text-gray-300 text-sm font-light">Join us in celebrating our union</p>
+                  <p className="text-indigo-700 text-sm font-light">Join us in celebrating our union</p>
                 </div>
               </div>
             </div>
@@ -242,7 +238,7 @@ const ChristianWedding = () => {
 
         {/* RSVP Status */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-100 rounded-2xl p-6 inline-block">
+          <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-6 inline-block">
             <p className="text-gray-700 font-light">4 Going • 1 Maybe</p>
           </div>
         </div>
@@ -258,7 +254,7 @@ const ChristianWedding = () => {
               <Button
                 onClick={() => setShowRSVP(false)}
                 variant="ghost"
-                className="p-2"
+                className="p-2 hover:bg-red-100 hover:text-red-600 rounded-full transition-colors"
               >
                 ✕
               </Button>
@@ -272,7 +268,7 @@ const ChristianWedding = () => {
                   value={rsvpData.name}
                   onChange={(e) => setRsvpData({...rsvpData, name: e.target.value})}
                   required
-                  className="mt-2 border-gray-200 rounded-xl font-light"
+                  className="mt-2 border-blue-200 rounded-xl font-light focus:border-blue-300 focus:ring-blue-200"
                 />
               </div>
 
@@ -284,14 +280,14 @@ const ChristianWedding = () => {
                   value={rsvpData.email}
                   onChange={(e) => setRsvpData({...rsvpData, email: e.target.value})}
                   required
-                  className="mt-2 border-gray-200 rounded-xl font-light"
+                  className="mt-2 border-blue-200 rounded-xl font-light focus:border-blue-300 focus:ring-blue-200"
                 />
               </div>
 
               <div>
                 <Label htmlFor="guests" className="text-sm font-light text-gray-700">Number of Guests</Label>
                 <Select value={rsvpData.guests} onValueChange={(value) => setRsvpData({...rsvpData, guests: value})}>
-                  <SelectTrigger className="mt-2 border-gray-200 rounded-xl font-light">
+                  <SelectTrigger className="mt-2 border-blue-200 rounded-xl font-light focus:border-blue-300">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -303,34 +299,22 @@ const ChristianWedding = () => {
               </div>
 
               <div>
-                <Label htmlFor="attendance" className="text-sm font-light text-gray-700">Will you attend?</Label>
-                <Select value={rsvpData.attendance} onValueChange={(value) => setRsvpData({...rsvpData, attendance: value})}>
-                  <SelectTrigger className="mt-2 border-gray-200 rounded-xl font-light">
+                <Label htmlFor="attending" className="text-sm font-light text-gray-700">Will you attend?</Label>
+                <Select value={rsvpData.attending} onValueChange={(value) => setRsvpData({...rsvpData, attending: value})}>
+                  <SelectTrigger className="mt-2 border-blue-200 rounded-xl font-light focus:border-blue-300">
                     <SelectValue placeholder="Please select" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="yes">Yes, I'll be there</SelectItem>
-                    <SelectItem value="no">Sorry, can't make it</SelectItem>
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
                   </SelectContent>
                 </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="dietary" className="text-sm font-light text-gray-700">Dietary Preferences</Label>
-                <Textarea
-                  id="dietary"
-                  placeholder="Any dietary restrictions..."
-                  value={rsvpData.dietary}
-                  onChange={(e) => setRsvpData({...rsvpData, dietary: e.target.value})}
-                  className="mt-2 border-gray-200 rounded-xl font-light"
-                  rows={3}
-                />
               </div>
 
               <Button 
                 type="submit" 
                 disabled={isSubmittingRSVP}
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-sm font-light rounded-xl disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-200 to-purple-200 hover:from-blue-300 hover:to-purple-300 text-blue-900 py-3 text-sm font-light rounded-xl disabled:opacity-50 shadow-lg hover:shadow-xl transition-all duration-200"
               >
                 {isSubmittingRSVP ? "Submitting..." : "Submit RSVP"}
               </Button>

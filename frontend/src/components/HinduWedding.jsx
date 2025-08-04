@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
@@ -15,8 +14,7 @@ const HinduWedding = () => {
     name: '',
     email: '',
     guests: '1',
-    attendance: '',
-    dietary: ''
+    attending: ''
   });
   const [weatherData, setWeatherData] = useState({
     temp: 30,
@@ -71,9 +69,8 @@ const HinduWedding = () => {
           ceremony: 'Hindu',
           name: rsvpData.name,
           email: rsvpData.email,
-          attending: rsvpData.attendance,
-          guests: rsvpData.guests,
-          dietary: rsvpData.dietary
+          attending: rsvpData.attending,
+          guests: rsvpData.guests
         }
       );
 
@@ -82,7 +79,7 @@ const HinduWedding = () => {
           title: "RSVP Submitted Successfully!",
           description: response.data.message,
         });
-        setRsvpData({ name: '', email: '', guests: '1', attendance: '', dietary: '' });
+        setRsvpData({ name: '', email: '', guests: '1', attending: '' });
         setShowRSVP(false);
       } else {
         toast({
@@ -133,7 +130,7 @@ const HinduWedding = () => {
         <div className="text-center mb-16">
           <div className="mb-8">
             {/* Couple Illustration */}
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-orange-100 to-red-100 rounded-full flex items-center justify-center mb-6">
+            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-orange-100 to-pink-100 rounded-full flex items-center justify-center mb-6">
               <div className="text-4xl">🕉️</div>
             </div>
           </div>
@@ -147,10 +144,10 @@ const HinduWedding = () => {
             <p>Al Saj Arena, Trivandrum KL</p>
           </div>
           
-          {/* Single RSVP Button */}
+          {/* Updated RSVP Button with Soft Pastel */}
           <Button
             onClick={() => setShowRSVP(true)}
-            className="bg-gray-900 hover:bg-gray-800 text-white font-light py-4 px-8 rounded-xl transition-all duration-200"
+            className="bg-gradient-to-r from-orange-200 to-pink-200 hover:from-orange-300 hover:to-pink-300 text-orange-900 font-light py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             <span className="mr-2">📤</span>
             RSVP
@@ -164,11 +161,11 @@ const HinduWedding = () => {
           <div className="space-y-8">
             
             {/* Wedding Details Card */}
-            <div className="bg-gray-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🕉️</div>
                 <h3 className="text-xl font-light text-gray-900 mb-4">Vivah Sanskar</h3>
-                <div className="w-8 h-px bg-gray-300 mx-auto"></div>
+                <div className="w-8 h-px bg-orange-300 mx-auto"></div>
               </div>
               <div className="space-y-4 text-center text-sm font-light text-gray-600">
                 <p><span className="font-normal text-gray-900">Date:</span> Thursday, August 28, 2025</p>
@@ -180,14 +177,13 @@ const HinduWedding = () => {
               <div className="flex gap-4 mt-8">
                 <Button 
                   onClick={handleCalendarAdd}
-                  className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-light py-3 rounded-xl"
+                  className="flex-1 bg-gradient-to-r from-rose-200 to-orange-200 hover:from-rose-300 hover:to-orange-300 text-rose-900 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   📅 Calendar
                 </Button>
                 <Button 
                   onClick={handleDirections}
-                  variant="outline"
-                  className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 font-light py-3 rounded-xl"
+                  className="flex-1 bg-gradient-to-r from-pink-100 to-purple-100 hover:from-pink-200 hover:to-purple-200 text-pink-900 border-pink-200 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
                 >
                   🗺️ Directions
                 </Button>
@@ -195,14 +191,14 @@ const HinduWedding = () => {
             </div>
 
             {/* Host Section */}
-            <div className="bg-gray-900 rounded-2xl p-6 text-white text-center">
+            <div className="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 text-red-900">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center mr-4">
+                <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mr-4">
                   <span className="text-xl">💑</span>
                 </div>
-                <div>
+                <div className="text-center">
                   <p className="font-light">Hosted by Jith & Pooja</p>
-                  <p className="text-gray-300 text-sm font-light">Join us in celebrating our union</p>
+                  <p className="text-red-700 text-sm font-light">Join us in celebrating our union</p>
                 </div>
               </div>
             </div>
@@ -243,7 +239,7 @@ const HinduWedding = () => {
 
         {/* RSVP Status */}
         <div className="mt-16 text-center">
-          <div className="bg-gray-100 rounded-2xl p-6 inline-block">
+          <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-2xl p-6 inline-block">
             <p className="text-gray-700 font-light">6 Going • 2 Maybe</p>
           </div>
         </div>
@@ -259,7 +255,7 @@ const HinduWedding = () => {
               <Button
                 onClick={() => setShowRSVP(false)}
                 variant="ghost"
-                className="p-2"
+                className="p-2 hover:bg-red-100 hover:text-red-600 rounded-full transition-colors"
               >
                 ✕
               </Button>
@@ -273,7 +269,7 @@ const HinduWedding = () => {
                   value={rsvpData.name}
                   onChange={(e) => setRsvpData({...rsvpData, name: e.target.value})}
                   required
-                  className="mt-2 border-gray-200 rounded-xl font-light"
+                  className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300 focus:ring-orange-200"
                 />
               </div>
 
@@ -285,14 +281,14 @@ const HinduWedding = () => {
                   value={rsvpData.email}
                   onChange={(e) => setRsvpData({...rsvpData, email: e.target.value})}
                   required
-                  className="mt-2 border-gray-200 rounded-xl font-light"
+                  className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300 focus:ring-orange-200"
                 />
               </div>
 
               <div>
                 <Label htmlFor="guests" className="text-sm font-light text-gray-700">Number of Guests</Label>
                 <Select value={rsvpData.guests} onValueChange={(value) => setRsvpData({...rsvpData, guests: value})}>
-                  <SelectTrigger className="mt-2 border-gray-200 rounded-xl font-light">
+                  <SelectTrigger className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -304,34 +300,22 @@ const HinduWedding = () => {
               </div>
 
               <div>
-                <Label htmlFor="attendance" className="text-sm font-light text-gray-700">Will you attend?</Label>
-                <Select value={rsvpData.attendance} onValueChange={(value) => setRsvpData({...rsvpData, attendance: value})}>
-                  <SelectTrigger className="mt-2 border-gray-200 rounded-xl font-light">
+                <Label htmlFor="attending" className="text-sm font-light text-gray-700">Will you attend?</Label>
+                <Select value={rsvpData.attending} onValueChange={(value) => setRsvpData({...rsvpData, attending: value})}>
+                  <SelectTrigger className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300">
                     <SelectValue placeholder="Please select" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="yes">Yes, I'll be there</SelectItem>
-                    <SelectItem value="no">Sorry, can't make it</SelectItem>
+                    <SelectItem value="yes">Yes</SelectItem>
+                    <SelectItem value="no">No</SelectItem>
                   </SelectContent>
                 </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="dietary" className="text-sm font-light text-gray-700">Dietary Preferences</Label>
-                <Textarea
-                  id="dietary"
-                  placeholder="Any dietary restrictions..."
-                  value={rsvpData.dietary}
-                  onChange={(e) => setRsvpData({...rsvpData, dietary: e.target.value})}
-                  className="mt-2 border-gray-200 rounded-xl font-light"
-                  rows={3}
-                />
               </div>
 
               <Button 
                 type="submit" 
                 disabled={isSubmittingRSVP}
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 text-sm font-light rounded-xl disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-orange-200 to-pink-200 hover:from-orange-300 hover:to-pink-300 text-orange-900 py-3 text-sm font-light rounded-xl disabled:opacity-50 shadow-lg hover:shadow-xl transition-all duration-200"
               >
                 {isSubmittingRSVP ? "Submitting..." : "Submit RSVP"}
               </Button>

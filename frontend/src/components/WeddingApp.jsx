@@ -9,14 +9,70 @@ import FAQ from './FAQ';
 import Loader from './Loader';
 import { Toaster } from './ui/toaster';
 
-const ParallaxSection = ({ children, className = "" }) => {
+const ParallaxSection = ({ children, backgroundImage, className = "" }) => {
   return (
     <div className={`relative min-h-screen overflow-hidden ${className}`}>
-      {/* Parallax background - you can add photos here later */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 animate-parallax-slow"></div>
-      <div className="absolute inset-0 bg-white/80"></div>
-      <div className="relative z-10">
+      {/* Parallax background with photo */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed scale-110 transition-transform duration-1000"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          transform: 'translateZ(0) scale(1.1)',
+        }}
+      ></div>
+      {/* Subtle overlay for text readability */}
+      <div className="absolute inset-0 bg-white/70"></div>
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
         {children}
+      </div>
+    </div>
+  );
+};
+
+const PhotoCarousel = () => {
+  const [currentPhoto, setCurrentPhoto] = useState(0);
+  const casualPhotos = [
+    '/images/casual1.jpg',
+    '/images/casual2.jpg'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentPhoto((prev) => (prev + 1) % casualPhotos.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [casualPhotos.length]);
+
+  return (
+    <div className="max-w-2xl mx-auto">
+      <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl">
+        {casualPhotos.map((photo, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentPhoto ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img
+              src={photo}
+              alt={`Save the date photo ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ))}
+        
+        {/* Carousel indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {casualPhotos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPhoto(index)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index === currentPhoto ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -67,11 +123,17 @@ const WeddingApp = () => {
         <InvitationCard />
       </section>
 
-      {/* Parallax Section 1 */}
-      <ParallaxSection className="flex items-center justify-center">
-        <div className="text-center text-gray-800">
-          <h2 className="text-4xl font-light mb-4 animate-fade-in-up">Our Journey</h2>
-          <p className="text-lg font-light animate-fade-in-up-delay">Save the date photos coming soon...</p>
+      {/* Parallax Section 1 - Our Journey with Casual Photos Carousel */}
+      <ParallaxSection 
+        backgroundImage="/images/traditional1.jpg"
+        className="flex items-center justify-center"
+      >
+        <div className="text-center text-gray-800 px-6 max-w-6xl mx-auto">
+          <h2 className="text-5xl font-light mb-8 animate-fade-in-up text-gray-900">Our Journey</h2>
+          <p className="text-xl font-light mb-12 animate-fade-in-up-delay text-gray-700 max-w-2xl mx-auto">
+            From casual moments to traditional celebrations, our love story unfolds
+          </p>
+          <PhotoCarousel />
         </div>
       </ParallaxSection>
 
@@ -79,11 +141,16 @@ const WeddingApp = () => {
         <ChristianWedding />
       </section>
 
-      {/* Parallax Section 2 */}
-      <ParallaxSection className="flex items-center justify-center">
-        <div className="text-center text-gray-800">
-          <h2 className="text-4xl font-light mb-4 animate-fade-in-up">Two Hearts, One Love</h2>
-          <p className="text-lg font-light animate-fade-in-up-delay">More photos coming soon...</p>
+      {/* Parallax Section 2 - Two Hearts, One Love */}
+      <ParallaxSection 
+        backgroundImage="/images/traditional2.jpg"
+        className="flex items-center justify-center"
+      >
+        <div className="text-center text-gray-800 px-6">
+          <h2 className="text-5xl font-light mb-6 animate-fade-in-up text-gray-900">Two Hearts, One Love</h2>
+          <p className="text-xl font-light animate-fade-in-up-delay text-gray-700 max-w-3xl mx-auto">
+            Celebrating the beautiful union of traditions, cultures, and endless love
+          </p>
         </div>
       </ParallaxSection>
 
@@ -91,11 +158,16 @@ const WeddingApp = () => {
         <HinduWedding />
       </section>
 
-      {/* Parallax Section 3 */}
-      <ParallaxSection className="flex items-center justify-center">
-        <div className="text-center text-gray-800">
-          <h2 className="text-4xl font-light mb-4 animate-fade-in-up">Forever Together</h2>
-          <p className="text-lg font-light animate-fade-in-up-delay">Wedding moments coming soon...</p>
+      {/* Parallax Section 3 - Forever Together */}
+      <ParallaxSection 
+        backgroundImage="/images/traditional3.jpg"
+        className="flex items-center justify-center"
+      >
+        <div className="text-center text-gray-800 px-6">
+          <h2 className="text-5xl font-light mb-6 animate-fade-in-up text-gray-900">Forever Together</h2>
+          <p className="text-xl font-light animate-fade-in-up-delay text-gray-700 max-w-3xl mx-auto">
+            As we embark on this new chapter, we carry with us the blessings of family and friends
+          </p>
         </div>
       </ParallaxSection>
 
