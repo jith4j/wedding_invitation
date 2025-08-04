@@ -52,9 +52,8 @@ def test_rsvp_christian():
         "ceremony": "Christian",
         "name": "Sarah Johnson",
         "email": "sarah.johnson@email.com",
-        "attending": "Yes",
-        "guests": "2",
-        "dietary": "Vegetarian"
+        "attending": "yes",
+        "guests": "2"
     }
     
     try:
