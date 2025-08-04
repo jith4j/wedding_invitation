@@ -84,8 +84,7 @@ async def create_rsvp(rsvp: RSVPCreate):
                 "name": rsvp.name,
                 "email": rsvp.email,
                 "attending": rsvp.attending,
-                "guests": rsvp.guests,
-                "dietary": rsvp.dietary
+                "guests": rsvp.guests
             }
         }
         
