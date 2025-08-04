@@ -136,7 +136,7 @@ const SendMessage = () => {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white py-4 text-base font-light rounded-2xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:transform-none"
+              className="w-full bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 py-4 text-base font-light rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">
