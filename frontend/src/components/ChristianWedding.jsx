@@ -148,33 +148,15 @@ const ChristianWedding = () => {
             <p>Madre De Deus Church, Vettucaud KL</p>
           </div>
           
-          {/* Enhanced RSVP Button with Gradient & Animation */}
+          {/* Enhanced RSVP Button with Gradient */}
           <div className="relative">
             <Button
               onClick={() => setShowRSVP(true)}
-              className="bg-gradient-to-r from-rose-200 via-pink-200 to-purple-200 hover:from-rose-300 hover:via-pink-300 hover:to-purple-300 text-gray-800 border-0 font-medium py-6 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 animate-pulse"
-              style={{
-                animation: 'gentle-pulse 2s ease-in-out infinite'
-              }}
+              className="bg-gradient-to-r from-rose-200 via-pink-200 to-purple-200 hover:from-rose-300 hover:via-pink-300 hover:to-purple-300 text-gray-800 border-0 font-medium py-6 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              <span className="mr-3 text-lg">💕</span>
               <span className="text-lg">RSVP NOW</span>
             </Button>
           </div>
-
-          {/* Add custom CSS for animation */}
-          <style jsx>{`
-            @keyframes gentle-pulse {
-              0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-              }
-              50% {
-                transform: scale(1.02);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
-              }
-            }
-          `}</style>
         </div>
 
         {/* Main Content Grid */}
