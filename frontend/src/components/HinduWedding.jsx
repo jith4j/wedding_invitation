@@ -129,9 +129,13 @@ const HinduWedding = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <div className="mb-8">
-            {/* Couple Illustration */}
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-orange-100 to-pink-100 rounded-full flex items-center justify-center mb-6">
-              <div className="text-4xl">🕉️</div>
+            {/* Temple Image */}
+            <div className="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
+              <img 
+                src="https://images.unsplash.com/photo-1638356633551-9984964fa1d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHx0ZW1wbGV8ZW58MHx8fHdoaXRlfDE3NTQzMTczMjh8MA&ixlib=rb-4.1.0&q=85"
+                alt="Temple"
+                className="w-20 h-20 object-cover rounded-lg opacity-70"
+              />
             </div>
           </div>
           
@@ -144,10 +148,10 @@ const HinduWedding = () => {
             <p>Al Saj Arena, Trivandrum KL</p>
           </div>
           
-          {/* Updated RSVP Button with Soft Pastel */}
+          {/* Light Theme RSVP Button */}
           <Button
             onClick={() => setShowRSVP(true)}
-            className="bg-gradient-to-r from-orange-200 to-pink-200 hover:from-orange-300 hover:to-pink-300 text-orange-900 font-light py-4 px-8 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
+            className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 font-light py-4 px-8 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
           >
             <span className="mr-2">📤</span>
             RSVP
@@ -161,11 +165,11 @@ const HinduWedding = () => {
           <div className="space-y-8">
             
             {/* Wedding Details Card */}
-            <div className="bg-gradient-to-br from-orange-50 to-pink-50 rounded-2xl p-8">
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🕉️</div>
                 <h3 className="text-xl font-light text-gray-900 mb-4">Vivah Sanskar</h3>
-                <div className="w-8 h-px bg-orange-300 mx-auto"></div>
+                <div className="w-8 h-px bg-gray-300 mx-auto"></div>
               </div>
               <div className="space-y-4 text-center text-sm font-light text-gray-600">
                 <p><span className="font-normal text-gray-900">Date:</span> Thursday, August 28, 2025</p>
@@ -177,60 +181,46 @@ const HinduWedding = () => {
               <div className="flex gap-4 mt-8">
                 <Button 
                   onClick={handleCalendarAdd}
-                  className="flex-1 bg-gradient-to-r from-rose-200 to-orange-200 hover:from-rose-300 hover:to-orange-300 text-rose-900 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+                  className="flex-1 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 font-light py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   📅 Calendar
                 </Button>
                 <Button 
                   onClick={handleDirections}
-                  className="flex-1 bg-gradient-to-r from-pink-100 to-purple-100 hover:from-pink-200 hover:to-purple-200 text-pink-900 border-pink-200 font-light py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+                  className="flex-1 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 font-light py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                 >
                   🗺️ Directions
                 </Button>
               </div>
             </div>
-
-            {/* Host Section */}
-            <div className="bg-gradient-to-br from-red-100 to-orange-100 rounded-2xl p-6 text-red-900">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 bg-white/70 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-xl">💑</span>
-                </div>
-                <div className="text-center">
-                  <p className="font-light">Hosted by Jith & Pooja</p>
-                  <p className="text-red-700 text-sm font-light">Join us in celebrating our union</p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column - Weather & Location */}
+          {/* Right Column - Weather & Location (Side by Side) */}
           <div className="space-y-8">
             
-            {/* Weather Card */}
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8">
-              <h4 className="text-xl font-light text-gray-900 mb-6 text-center">Weather Forecast</h4>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-4xl font-light text-gray-900 mb-2">{weatherData.temp}°C</p>
-                  <p className="text-base font-light text-gray-700">{weatherData.condition}</p>
-                  <p className="text-sm font-light text-gray-600">Humidity: {weatherData.humidity}%</p>
+            {/* Weather & Location Row */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Weather Card - Compact */}
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                <h4 className="text-sm font-light text-gray-900 mb-3 text-center">Weather</h4>
+                <div className="text-center">
+                  <p className="text-2xl font-light text-gray-900 mb-1">{weatherData.temp}°C</p>
+                  <p className="text-xs font-light text-gray-600">{weatherData.condition}</p>
+                  <p className="text-xs font-light text-gray-500">Humidity: {weatherData.humidity}%</p>
                 </div>
-                <div className="text-6xl">☀️</div>
               </div>
-            </div>
 
-            {/* Maps Card */}
-            <div 
-              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 cursor-pointer hover:from-purple-100 hover:to-pink-100 transition-colors"
-              onClick={handleDirections}
-            >
-              <h4 className="text-xl font-light text-gray-900 mb-6 text-center">Location</h4>
-              <div className="text-center">
-                <div className="text-5xl mb-4">📍</div>
-                <p className="text-base font-light text-gray-700 mb-2">Click for Google Maps</p>
-                <p className="text-sm font-light text-gray-600">Al Saj Arena</p>
-                <p className="text-sm font-light text-gray-600">Trivandrum, Kerala</p>
+              {/* Location Card - Compact */}
+              <div 
+                className="bg-gray-50 border border-gray-200 rounded-xl p-4 cursor-pointer hover:bg-gray-100 transition-colors"
+                onClick={handleDirections}
+              >
+                <h4 className="text-sm font-light text-gray-900 mb-3 text-center">Location</h4>
+                <div className="text-center">
+                  <div className="text-2xl mb-2">📍</div>
+                  <p className="text-xs font-light text-gray-600">Click for Maps</p>
+                  <p className="text-xs font-light text-gray-500">Trivandrum</p>
+                </div>
               </div>
             </div>
 
@@ -239,7 +229,7 @@ const HinduWedding = () => {
 
         {/* RSVP Status */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-orange-100 to-pink-100 rounded-2xl p-6 inline-block">
+          <div className="bg-gray-100 border border-gray-200 rounded-2xl p-6 inline-block">
             <p className="text-gray-700 font-light">6 Going • 2 Maybe</p>
           </div>
         </div>
@@ -249,13 +239,13 @@ const HinduWedding = () => {
       {/* RSVP Modal */}
       {showRSVP && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-2xl p-6 w-full max-w-md max-h-[90vh] overflow-y-auto border border-gray-200">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-xl font-light text-gray-900">RSVP - Hindu Wedding</h3>
               <Button
                 onClick={() => setShowRSVP(false)}
                 variant="ghost"
-                className="p-2 hover:bg-red-100 hover:text-red-600 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-100 hover:text-gray-600 rounded-full transition-colors"
               >
                 ✕
               </Button>
@@ -269,7 +259,7 @@ const HinduWedding = () => {
                   value={rsvpData.name}
                   onChange={(e) => setRsvpData({...rsvpData, name: e.target.value})}
                   required
-                  className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300 focus:ring-orange-200"
+                  className="mt-2 border-gray-300 rounded-xl font-light focus:border-gray-400 focus:ring-gray-200"
                 />
               </div>
 
@@ -281,14 +271,14 @@ const HinduWedding = () => {
                   value={rsvpData.email}
                   onChange={(e) => setRsvpData({...rsvpData, email: e.target.value})}
                   required
-                  className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300 focus:ring-orange-200"
+                  className="mt-2 border-gray-300 rounded-xl font-light focus:border-gray-400 focus:ring-gray-200"
                 />
               </div>
 
               <div>
                 <Label htmlFor="guests" className="text-sm font-light text-gray-700">Number of Guests</Label>
                 <Select value={rsvpData.guests} onValueChange={(value) => setRsvpData({...rsvpData, guests: value})}>
-                  <SelectTrigger className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300">
+                  <SelectTrigger className="mt-2 border-gray-300 rounded-xl font-light focus:border-gray-400">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -302,7 +292,7 @@ const HinduWedding = () => {
               <div>
                 <Label htmlFor="attending" className="text-sm font-light text-gray-700">Will you attend?</Label>
                 <Select value={rsvpData.attending} onValueChange={(value) => setRsvpData({...rsvpData, attending: value})}>
-                  <SelectTrigger className="mt-2 border-orange-200 rounded-xl font-light focus:border-orange-300">
+                  <SelectTrigger className="mt-2 border-gray-300 rounded-xl font-light focus:border-gray-400">
                     <SelectValue placeholder="Please select" />
                   </SelectTrigger>
                   <SelectContent>
@@ -315,7 +305,7 @@ const HinduWedding = () => {
               <Button 
                 type="submit" 
                 disabled={isSubmittingRSVP}
-                className="w-full bg-gradient-to-r from-orange-200 to-pink-200 hover:from-orange-300 hover:to-pink-300 text-orange-900 py-3 text-sm font-light rounded-xl disabled:opacity-50 shadow-lg hover:shadow-xl transition-all duration-200"
+                className="w-full bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 py-3 text-sm font-light rounded-xl disabled:opacity-50 shadow-sm hover:shadow-md transition-all duration-200"
               >
                 {isSubmittingRSVP ? "Submitting..." : "Submit RSVP"}
               </Button>

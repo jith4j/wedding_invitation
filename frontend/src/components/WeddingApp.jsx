@@ -45,7 +45,8 @@ const PhotoCarousel = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="relative w-full h-96 rounded-3xl overflow-hidden shadow-xl">
+      {/* Carousel with correct aspect ratio for images (1200x1500 and 1024x1280) */}
+      <div className="relative w-80 h-96 mx-auto rounded-3xl overflow-hidden shadow-xl bg-gray-100 border border-gray-200">
         {casualPhotos.map((photo, index) => (
           <div
             key={index}
@@ -57,6 +58,18 @@ const PhotoCarousel = () => {
               src={photo}
               alt={`Save the date photo ${index + 1}`}
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentElement.innerHTML = `
+                  <div class="w-full h-full flex items-center justify-center bg-gray-100 text-gray-400">
+                    <div class="text-center">
+                      <div class="text-6xl mb-4">📸</div>
+                      <p class="text-sm">Save the date photo ${index + 1}</p>
+                      <p class="text-xs mt-2">Upload casual${index + 1}.jpg to /app/frontend/public/images/</p>
+                    </div>
+                  </div>
+                `;
+              }}
             />
           </div>
         ))}
