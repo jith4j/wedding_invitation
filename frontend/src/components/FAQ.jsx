@@ -90,7 +90,7 @@ const FAQ = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm font-light text-gray-700">
             <div>jithandpooja@gmail.com</div>
-            <div>+91 8848 1555 15</div>
+            {/* <div>+91 8848 1555 15</div> */}
           </div>
         </div>
       </div>
