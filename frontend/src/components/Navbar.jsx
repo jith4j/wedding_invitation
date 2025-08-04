@@ -6,6 +6,7 @@ const Navbar = ({ scrolled, onNavigate }) => {
   
   const navItems = [
     { id: 'home', label: 'Home' },
+    { id: 'our-journey', label: 'Our Journey' },
     { id: 'christian-wedding', label: 'Christian Wedding' },
     { id: 'hindu-wedding', label: 'Hindu Wedding' },
     { id: 'send-message', label: 'Send Message' },
