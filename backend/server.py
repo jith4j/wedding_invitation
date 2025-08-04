@@ -42,9 +42,8 @@ class RSVPCreate(BaseModel):
     ceremony: str  # "Christian" or "Hindu"
     name: str
     email: str
-    attending: str  # "Yes" or "No"
+    attending: str  # "yes" or "no"
     guests: str
-    dietary: Optional[str] = ""
 
 class RSVPResponse(BaseModel):
     success: bool
