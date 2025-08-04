@@ -16,20 +16,20 @@ const SendMessage = () => {
   const [previousMessages] = useState([
     {
       id: 1,
-      name: 'Sarah & John',
-      message: 'We are so excited to celebrate your special day. Wishing you both endless love and happiness.',
+      name: 'Maneesha',
+      message: 'Can\'t wait to be a part of your special day.',
       timestamp: '2 days ago'
     },
     {
       id: 2,
-      name: 'The Sharma Family',
-      message: 'Congratulations on this beautiful union. May your marriage be filled with joy, laughter, and countless blessings.',
+      name: 'Devika',
+      message: 'I don\'t know how to express my happiness - I\'m so excited to see the wedding!',
       timestamp: '3 days ago'
     },
     {
       id: 3,
-      name: 'Maya',
-      message: 'Two hearts becoming one. So happy for you both. Can\'t wait to witness this magical day.',
+      name: 'Arjun',
+      message: 'Feels like yesterday with the 3 of us on the same Bus for 4 years, We\'ve come a long way. Cannot wait to see you both getting hitched. To a lifetime of happiness.',
       timestamp: '5 days ago'
     }
   ]);

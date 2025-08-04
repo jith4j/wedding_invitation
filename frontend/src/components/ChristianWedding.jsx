@@ -132,9 +132,9 @@ const ChristianWedding = () => {
             {/* Church Image */}
             <div className="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="https://images.unsplash.com/photo-1504087825736-ec698faffd4c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1NzZ8MHwxfHNlYXJjaHwyfHxjaHVyY2h8ZW58MHx8fHdoaXRlfDE3NTQzMTczMjF8MA&ixlib=rb-4.1.0&q=85"
+                src="./images/christian-img.png"
                 alt="Church"
-                className="w-20 h-20 object-cover rounded-lg opacity-70"
+                className="w-40 h-20 object-cover rounded-lg opacity-70"
               />
             </div>
           </div>

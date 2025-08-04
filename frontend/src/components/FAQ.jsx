@@ -28,11 +28,11 @@ const FAQ = () => {
       question: 'Are children welcome at the ceremonies?',
       answer: 'Absolutely. We love having families celebrate with us. Both venues are child-friendly. Please mention the number of children when you RSVP.'
     },
-    {
-      id: 'item-5',
-      question: 'What about dietary restrictions?',
-      answer: 'Please let us know about any dietary restrictions when you RSVP. We will have vegetarian options available at both ceremonies, and can accommodate most special dietary needs.'
-    },
+    // {
+    //   id: 'item-5',
+    //   question: 'What about dietary restrictions?',
+    //   answer: 'Please let us know about any dietary restrictions when you RSVP. We will have vegetarian options available at both ceremonies, and can accommodate most special dietary needs.'
+    // },
     {
       id: 'item-6',
       question: 'Can I take photos during the ceremonies?',
@@ -89,8 +89,8 @@ const FAQ = () => {
             We're here to help. Don't hesitate to reach out if you need any additional information.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center text-sm font-light text-gray-700">
-            <div>jithandpooja@wedding.com</div>
-            <div>+91 98765 43210</div>
+            <div>jithandpooja@gmail.com</div>
+            <div>+91 8848 1555 15</div>
           </div>
         </div>
       </div>

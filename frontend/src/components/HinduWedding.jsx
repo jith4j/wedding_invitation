@@ -132,9 +132,9 @@ const HinduWedding = () => {
             {/* Temple Image */}
             <div className="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="https://images.unsplash.com/photo-1638356633551-9984964fa1d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHx0ZW1wbGV8ZW58MHx8fHdoaXRlfDE3NTQzMTczMjh8MA&ixlib=rb-4.1.0&q=85"
+                src="./images/hindu-img.png"
                 alt="Temple"
-                className="w-20 h-20 object-cover rounded-lg opacity-70"
+                className="w-40 h-20 object-cover rounded-lg opacity-70"
               />
             </div>
           </div>
