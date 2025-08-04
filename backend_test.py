@@ -91,9 +91,8 @@ def test_rsvp_hindu():
         "ceremony": "Hindu",
         "name": "Priya Sharma",
         "email": "priya.sharma@email.com",
-        "attending": "Yes",
-        "guests": "4",
-        "dietary": "No restrictions"
+        "attending": "yes",
+        "guests": "4"
     }
     
     try:
