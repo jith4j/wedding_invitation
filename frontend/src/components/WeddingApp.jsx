@@ -45,7 +45,7 @@ const PhotoCarousel = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      {/* Carousel with correct aspect ratio for images (1200x1500 and 1024x1280) */}
+      {/* Carousel with proper dimensions and centering */}
       <div className="relative w-80 h-96 mx-auto rounded-3xl overflow-hidden shadow-xl bg-gray-100 border border-gray-200">
         {casualPhotos.map((photo, index) => (
           <div
@@ -57,7 +57,7 @@ const PhotoCarousel = () => {
             <img
               src={photo}
               alt={`Save the date photo ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.parentElement.innerHTML = `
