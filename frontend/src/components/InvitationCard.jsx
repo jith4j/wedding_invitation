@@ -26,7 +26,7 @@ const InvitationCard = () => {
           <div className="mb-6">
             <div className="w-24 h-24 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="./images/christian-icon.png"
+                src="/images/christian-icon.png"
                 alt="Church"
                 className="w-20 h-16 object-cover rounded-lg opacity-70"
               />
@@ -61,7 +61,7 @@ const InvitationCard = () => {
           <div className="mb-6">
             <div className="w-24 h-24 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="./images/hindu-icon.png"
+                src="/images/hindu-icon.png"
                 alt="Temple"
                 className="w-20 h-16 object-cover rounded-lg opacity-70"
               />

@@ -102,7 +102,7 @@ const HinduWedding = () => {
 
   const handleCalendarAdd = () => {
     const title = "Jith and Pooja - Hindu Wedding (Muhurtham)";
-    const details = "Join us for the Hindu wedding ceremony (Vivah Sanskar) at Al Saj Arena, Trivandrum KL";
+    const details = "Join us for the Hindu wedding ceremony at Al Saj Arena, Trivandrum KL";
     const location = "Al Saj Arena, Trivandrum, Kerala";
     const startDate = "20250828T044500Z"; // 10:15 AM IST = 04:45 AM UTC
     const endDate = "20250828T051500Z"; // 10:45 AM IST = 05:15 AM UTC
@@ -132,7 +132,7 @@ const HinduWedding = () => {
             {/* Temple Image */}
             <div className="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="./images/hindu-img.png"
+                src="/images/hindu-img.png"
                 alt="Temple"
                 className="w-40 h-20 object-cover rounded-lg opacity-70"
               />
@@ -169,7 +169,7 @@ const HinduWedding = () => {
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🕉️</div>
-                <h3 className="text-xl font-light text-gray-900 mb-4">Vivah Sanskar</h3>
+                {/* <h3 className="text-xl font-light text-gray-900 mb-4">Vivah Sanskar</h3> */}
                 <div className="w-8 h-px bg-gray-300 mx-auto"></div>
               </div>
               <div className="space-y-4 text-center text-sm font-light text-gray-600">
