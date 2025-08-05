@@ -99,10 +99,10 @@ const WeddingApp = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for the website
+    // Simulate loading time for the website - 5 seconds
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2500);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -156,7 +156,7 @@ const WeddingApp = () => {
 
       {/* Parallax Section 2 - Two Hearts, One Love */}
       <ParallaxSection 
-        backgroundImage="/images/traditional2.jpg"
+        backgroundImage="/images/traditional4.jpg"
         className="flex items-center justify-center"
       >
         <div className="text-center text-gray-800 px-6">

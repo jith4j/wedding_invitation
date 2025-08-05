@@ -24,7 +24,7 @@ const CountdownTimer = ({ targetDate, title }) => {
 
   return (
     <div className="text-center">
-      <h3 className="text-sm font-light text-gray-600 mb-6 tracking-wide uppercase">
+      <h3 className="text-sm font-light text-gray-700 mb-6 tracking-wide uppercase">
         {title}
       </h3>
       <div className="flex justify-center gap-4">
@@ -33,7 +33,7 @@ const CountdownTimer = ({ targetDate, title }) => {
             <div className="text-2xl md:text-3xl font-light text-gray-900 mb-1">
               {value.toString().padStart(2, '0')}
             </div>
-            <div className="text-xs font-light text-gray-500 uppercase tracking-wide">{unit}</div>
+            <div className="text-xs font-light text-gray-600 uppercase tracking-wide">{unit}</div>
           </div>
         ))}
       </div>
@@ -48,7 +48,7 @@ const DoveIllustration = () => (
       height="40"
       viewBox="0 0 60 40"
       fill="none"
-      className="text-gray-400"
+      className="text-gray-500"
     >
       <path
         d="M30 8C35 6 45 8 52 15C48 18 42 20 35 19C32 25 28 30 20 32C15 30 12 25 15 20C18 18 22 16 25 15C27 12 28 10 30 8Z"
@@ -69,8 +69,19 @@ const DoveIllustration = () => (
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <div className="relative min-h-screen flex items-center justify-center px-6">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(/images/traditional2.jpg)',
+        }}
+      ></div>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/60"></div>
+      
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         
         {/* Dove Illustration */}
         <DoveIllustration />
@@ -80,8 +91,8 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-extralight text-gray-900 mb-4 tracking-tight">
             Jith & Pooja
           </h1>
-          <div className="w-16 h-px bg-gray-300 mx-auto mb-6"></div>
-          <p className="text-lg font-light text-gray-600 tracking-wide">
+          <div className="w-16 h-px bg-gray-400 mx-auto mb-6"></div>
+          <p className="text-lg font-light text-gray-700 tracking-wide">
             Two hearts, Two traditions, One beautiful journey
           </p>
         </div>
@@ -100,7 +111,7 @@ const HeroSection = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>
