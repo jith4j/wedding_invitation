@@ -132,7 +132,7 @@ const ChristianWedding = () => {
             {/* Church Image */}
             <div className="w-32 h-32 mx-auto bg-gray-50 rounded-full flex items-center justify-center mb-6 border border-gray-200">
               <img 
-                src="./images/christian-img.png"
+                src="/images/christian-img.png"
                 alt="Church"
                 className="w-40 h-20 object-cover rounded-lg opacity-70"
               />
@@ -168,7 +168,7 @@ const ChristianWedding = () => {
             {/* Wedding Details Card */}
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-light text-gray-900 mb-4">Sacred Union</h3>
+                {/* <h3 className="text-xl font-light text-gray-900 mb-4">Sacred Union</h3> */}
                 <div className="w-8 h-px bg-gray-300 mx-auto"></div>
               </div>
               <div className="space-y-4 text-center text-sm font-light text-gray-600">
