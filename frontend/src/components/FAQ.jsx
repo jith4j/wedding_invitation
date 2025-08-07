@@ -52,17 +52,17 @@ const FAQ = () => {
 
   return (
     <div className="max-w-3xl mx-auto px-6">
-      <div className="text-center mb-16">
-        {/* <h2 className="text-3xl font-light text-gray-900 mb-4 tracking-tight">
+      {/* <div className="text-center mb-16">
+        <h2 className="text-3xl font-light text-gray-900 mb-4 tracking-tight">
           Frequently Asked Questions
-        </h2> */}
+        </h2>
         <div className="w-12 h-px bg-gray-300 mx-auto mb-6"></div>
         <p className="text-base font-light text-gray-600">
           Everything you need to know about our celebrations
         </p>
-      </div>
+      </div> */}
 
-      <div className="bg-white border border-gray-100">
+      {/* <div className="bg-white border border-gray-100">
         <Accordion type="single" collapsible className="w-full">
           {faqItems.map((item, index) => (
             <AccordionItem 
@@ -79,7 +79,7 @@ const FAQ = () => {
             </AccordionItem>
           ))}
         </Accordion>
-      </div>
+      </div> */}
 
       {/* Contact Section */}
       <div className="mt-16 text-center">

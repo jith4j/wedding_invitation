@@ -159,16 +159,16 @@ const SendMessage = () => {
         {/* Previous Messages */}
         <div>
           <div className="text-center mb-12">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            {/* <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">💝</span>
-            </div>
-            <h3 className="text-xl font-light text-gray-900">
+            </div> */}
+            {/* <h3 className="text-xl font-light text-gray-900">
               Messages from Loved Ones
-            </h3>
+            </h3> */}
           </div>
           
           <div className="space-y-6">
-            {previousMessages.map((msg, index) => (
+            {/* {previousMessages.map((msg, index) => (
               <div key={msg.id} className={`bg-gradient-to-br ${
                 index % 3 === 0 ? 'from-rose-50 to-pink-50' :
                 index % 3 === 1 ? 'from-blue-50 to-indigo-50' :
@@ -180,16 +180,16 @@ const SendMessage = () => {
                 </div>
                 <p className="text-base font-light text-gray-700 leading-relaxed italic">"{msg.message}"</p>
               </div>
-            ))}
+            ))} */}
             
             {/* See More Messages */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center border-2 border-dashed border-gray-200">
+            {/* <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center border-2 border-dashed border-gray-200">
               <div className="text-3xl mb-4">💕</div>
               <p className="text-base font-light text-gray-600 mb-4">And many more beautiful messages...</p>
               <Button variant="outline" className="text-gray-700 hover:text-gray-900 font-light border-gray-300 hover:border-gray-400 rounded-xl px-6 py-2">
                 View All Messages
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

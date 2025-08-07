@@ -282,7 +282,7 @@ const ChristianWedding = () => {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {[1,2,3,4,5].map(num => (
+                    {[1,2,3].map(num => (
                       <SelectItem key={num} value={num.toString()}>{num}</SelectItem>
                     ))}
                   </SelectContent>
