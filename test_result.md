@@ -354,9 +354,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Google Maps integration"
-    - "Weather API integration" 
-    - "Google Calendar links integration"
+    - "Create unified RSVP component with ceremony selection"
+    - "Replace Forever Together parallax with RSVP section"
+    - "Remove RSVP buttons from individual ceremony sections"
+    - "Improve Directions button styling"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
@@ -370,3 +371,5 @@ agent_communication:
       message: "Backend testing completed successfully. All implemented endpoints are working correctly: 1) RSVP endpoint successfully integrates with SheetDB API and handles both Christian/Hindu wedding data with proper validation. 2) Weather endpoint successfully integrates with OpenWeatherMap API with proper fallback mechanism. 3) Root endpoint working correctly. Created comprehensive backend_test.py with 7 test cases - all passed. Backend implementation is solid and ready for frontend integration."
     - agent: "testing"
       message: "Comprehensive testing of updated RSVP functionality completed successfully. Updated backend_test.py to remove dietary field and ran extensive tests including: 1) Basic RSVP submissions for both ceremonies 2) Validation testing with missing fields 3) Error handling with invalid JSON 4) Special characters and long data handling 5) Various attending values (yes/no). All 15 test cases passed. SheetDB integration confirmed working with HTTP 201 responses in logs. httpcore dependency issue resolved. Backend RSVP API is fully functional and ready for production use."
+    - agent: "main"
+      message: "Modified RSVP functionality as requested: 1) Removed individual RSVP buttons and count cards from both ceremony sections 2) Created unified RSVP component with ceremony selection (both, Christian only, Hindu only, none) 3) Replaced Forever Together parallax content with prominent RSVP button 4) Enhanced Directions button styling with gradients and better visibility 5) Unified RSVP handles multiple API calls when both ceremonies selected. Ready for testing."
