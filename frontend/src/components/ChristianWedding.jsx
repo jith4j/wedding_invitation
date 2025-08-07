@@ -101,15 +101,7 @@ const ChristianWedding = () => {
             <p>Madre De Deus Church, Vettucaud KL</p>
           </div>
           
-          {/* Enhanced RSVP Button with Gradient */}
-          <div className="relative">
-            <Button
-              onClick={() => setShowRSVP(true)}
-              className="bg-gradient-to-r from-rose-200 via-pink-200 to-purple-200 hover:from-rose-300 hover:via-pink-300 hover:to-purple-300 text-gray-800 border-0 font-medium py-6 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <span className="text-lg">RSVP NOW</span>
-            </Button>
-          </div>
+          {/* RSVP button removed - now handled by unified RSVP component */}
         </div>
 
         {/* Main Content Grid */}
