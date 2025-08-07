@@ -4,6 +4,7 @@ import HeroSection from './HeroSection';
 import InvitationCard from './InvitationCard';
 import ChristianWedding from './ChristianWedding';
 import HinduWedding from './HinduWedding';
+import UnifiedRSVP from './UnifiedRSVP';
 import SendMessage from './SendMessage';
 import FAQ from './FAQ';
 import Loader from './Loader';
