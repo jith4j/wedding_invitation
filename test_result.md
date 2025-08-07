@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: Integrate wedding website with provided APIs - RSVP storage (SheetDB), EmailJS for messages, Google Maps, Weather API, and Google Calendar links.
+user_problem_statement: Modified RSVP functionality - removed individual RSVP buttons from ceremony sections, created unified RSVP section with ceremony selection, removed count cards, and improved button styling.
 
 backend:
   - task: "RSVP API endpoint for SheetDB integration"
