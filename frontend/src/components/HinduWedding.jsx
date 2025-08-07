@@ -130,9 +130,11 @@ const HinduWedding = () => {
                 </Button>
                 <Button 
                   onClick={handleDirections}
-                  className="flex-1 bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 hover:border-gray-400 font-light py-3 rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                  className="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white border-0 font-medium py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  🗺️ Directions
+                  <span className="flex items-center gap-2">
+                    🗺️ <span>Get Directions</span>
+                  </span>
                 </Button>
               </div>
             </div>
