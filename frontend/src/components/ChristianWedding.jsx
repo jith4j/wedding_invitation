@@ -51,47 +51,7 @@ const ChristianWedding = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const handleRSVPSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmittingRSVP(true);
-    
-    try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/rsvp`,
-        {
-          ceremony: 'Christian',
-          name: rsvpData.name,
-          email: rsvpData.email,
-          attending: rsvpData.attending,
-          guests: rsvpData.guests
-        }
-      );
-
-      if (response.data.success) {
-        toast({
-          title: "RSVP Submitted Successfully!",
-          description: response.data.message,
-        });
-        setRsvpData({ name: '', email: '', guests: '1', attending: '' });
-        setShowRSVP(false);
-      } else {
-        toast({
-          title: "RSVP Submission Failed",
-          description: response.data.message,
-          variant: "destructive"
-        });
-      }
-    } catch (error) {
-      console.error('RSVP submission error:', error);
-      toast({
-        title: "RSVP Submission Failed",
-        description: "Please try again or contact us directly.",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmittingRSVP(false);
-    }
-  };
+  // Removed handleRSVPSubmit - now handled by unified RSVP component
 
   const handleCalendarAdd = () => {
     const title = "Jith and Pooja - Christian Wedding";
