@@ -98,15 +98,7 @@ const HinduWedding = () => {
             <p>Al Saj Arena, Trivandrum KL</p>
           </div>
           
-          {/* Enhanced RSVP Button with Gradient */}
-          <div className="relative">
-            <Button
-              onClick={() => setShowRSVP(true)}
-              className="bg-gradient-to-r from-orange-200 via-yellow-200 to-amber-200 hover:from-orange-300 hover:via-yellow-300 hover:to-amber-300 text-gray-800 border-0 font-medium py-6 px-12 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <span className="text-lg">RSVP NOW</span>
-            </Button>
-          </div>
+          {/* RSVP button removed - now handled by unified RSVP component */}
         </div>
 
         {/* Main Content Grid */}
