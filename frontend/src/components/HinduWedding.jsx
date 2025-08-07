@@ -5,14 +5,7 @@ import axios from 'axios';
 
 const HinduWedding = () => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
-  const [showRSVP, setShowRSVP] = useState(false);
-  const [isSubmittingRSVP, setIsSubmittingRSVP] = useState(false);
-  const [rsvpData, setRsvpData] = useState({
-    name: '',
-    email: '',
-    guests: '1',
-    attending: ''
-  });
+  // Removed RSVP state - now handled by unified RSVP component
   const [weatherData, setWeatherData] = useState({
     temp: 30,
     condition: 'Sunny',
