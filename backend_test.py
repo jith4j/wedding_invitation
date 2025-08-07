@@ -240,6 +240,190 @@ def test_weather_invalid_location():
         print(f"❌ Weather invalid location error: {e}")
         return False
 
+def test_rsvp_consecutive_submissions():
+    """Test multiple consecutive RSVP submissions (unified RSVP both ceremonies scenario)"""
+    print("\n🔍 Testing RSVP Endpoint - Consecutive Submissions (Both Ceremonies)...")
+    
+    # Simulate unified RSVP selecting "both ceremonies" - sends 2 requests rapidly
+    rsvp_data_christian = {
+        "ceremony": "Christian",
+        "name": "Michael Rodriguez",
+        "email": "michael.rodriguez@email.com",
+        "attending": "yes",
+        "guests": "3"
+    }
+    
+    rsvp_data_hindu = {
+        "ceremony": "Hindu",
+        "name": "Michael Rodriguez",
+        "email": "michael.rodriguez@email.com",
+        "attending": "yes",
+        "guests": "3"
+    }
+    
+    try:
+        import time
+        
+        # Send both requests rapidly (simulating unified RSVP)
+        start_time = time.time()
+        
+        response1 = requests.post(
+            f"{API_BASE}/rsvp",
+            json=rsvp_data_christian,
+            headers={"Content-Type": "application/json"},
+            timeout=30
+        )
+        
+        response2 = requests.post(
+            f"{API_BASE}/rsvp",
+            json=rsvp_data_hindu,
+            headers={"Content-Type": "application/json"},
+            timeout=30
+        )
+        
+        end_time = time.time()
+        duration = end_time - start_time
+        
+        print(f"Both requests completed in {duration:.2f} seconds")
+        print(f"Christian Response - Status: {response1.status_code}, Data: {response1.json()}")
+        print(f"Hindu Response - Status: {response2.status_code}, Data: {response2.json()}")
+        
+        # Both should succeed
+        if response1.status_code == 200 and response2.status_code == 200:
+            data1 = response1.json()
+            data2 = response2.json()
+            if (data1.get("success") and data2.get("success")):
+                print("✅ Consecutive RSVP submissions working correctly")
+                return True
+            else:
+                print("❌ One or both consecutive RSVP submissions failed")
+                return False
+        else:
+            print(f"❌ Consecutive RSVP failed - Status codes: {response1.status_code}, {response2.status_code}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Consecutive RSVP error: {e}")
+        return False
+
+def test_rsvp_invalid_json():
+    """Test POST /api/rsvp with invalid JSON"""
+    print("\n🔍 Testing RSVP Endpoint - Invalid JSON...")
+    
+    try:
+        # Send malformed JSON
+        response = requests.post(
+            f"{API_BASE}/rsvp",
+            data="invalid json data",
+            headers={"Content-Type": "application/json"},
+            timeout=30
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        print(f"Response: {response.text}")
+        
+        # Should return 422 for validation error
+        if response.status_code in [422, 400]:
+            print("✅ RSVP invalid JSON handling working correctly")
+            return True
+        else:
+            print(f"❌ RSVP invalid JSON failed with status {response.status_code}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ RSVP invalid JSON error: {e}")
+        return False
+
+def test_rsvp_special_characters():
+    """Test POST /api/rsvp with special characters and long data"""
+    print("\n🔍 Testing RSVP Endpoint - Special Characters & Long Data...")
+    
+    rsvp_data = {
+        "ceremony": "Christian",
+        "name": "José María García-López & Priyanka Śrīvāstava",
+        "email": "jose.maria.garcia-lopez@very-long-domain-name-example.com",
+        "attending": "yes",
+        "guests": "10"
+    }
+    
+    try:
+        response = requests.post(
+            f"{API_BASE}/rsvp",
+            json=rsvp_data,
+            headers={"Content-Type": "application/json"},
+            timeout=30
+        )
+        
+        print(f"Status Code: {response.status_code}")
+        print(f"Response: {response.json()}")
+        
+        if response.status_code == 200:
+            data = response.json()
+            if "success" in data and "message" in data:
+                print("✅ RSVP special characters handling working correctly")
+                return True
+            else:
+                print("❌ RSVP special characters response missing expected fields")
+                return False
+        else:
+            print(f"❌ RSVP special characters failed with status {response.status_code}")
+            return False
+            
+    except Exception as e:
+        print(f"❌ RSVP special characters error: {e}")
+        return False
+
+def test_rsvp_different_attending_values():
+    """Test POST /api/rsvp with different attending values"""
+    print("\n🔍 Testing RSVP Endpoint - Different Attending Values...")
+    
+    test_cases = [
+        {"attending": "no", "guests": "0"},
+        {"attending": "maybe", "guests": "1"},
+        {"attending": "YES", "guests": "2"},
+        {"attending": "No", "guests": "0"}
+    ]
+    
+    results = []
+    
+    for i, case in enumerate(test_cases):
+        rsvp_data = {
+            "ceremony": "Hindu",
+            "name": f"Test User {i+1}",
+            "email": f"testuser{i+1}@example.com",
+            "attending": case["attending"],
+            "guests": case["guests"]
+        }
+        
+        try:
+            response = requests.post(
+                f"{API_BASE}/rsvp",
+                json=rsvp_data,
+                headers={"Content-Type": "application/json"},
+                timeout=30
+            )
+            
+            print(f"  Attending '{case['attending']}' - Status: {response.status_code}")
+            
+            if response.status_code == 200:
+                results.append(True)
+            else:
+                results.append(False)
+                
+        except Exception as e:
+            print(f"  Error with attending '{case['attending']}': {e}")
+            results.append(False)
+    
+    success_count = sum(results)
+    total_count = len(results)
+    
+    if success_count == total_count:
+        print("✅ RSVP different attending values working correctly")
+        return True
+    else:
+        print(f"❌ RSVP attending values - {success_count}/{total_count} succeeded")
+        return False
+
 def main():
     """Run all backend tests"""
     print("🚀 Starting Backend API Tests")
