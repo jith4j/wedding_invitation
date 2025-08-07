@@ -139,6 +139,78 @@ backend:
           comment: "Weather endpoint fully functional. Successfully tested GET /api/weather/{location} for both Vettucaud and Trivandrum. OpenWeatherMap API integration working for valid locations (Trivandrum returned real data: 23.99°C, Mist, 94% humidity). Proper fallback mechanism for invalid locations (Vettucaud returned default data). All responses include required fields: temp, condition, humidity, location."
 
 frontend:
+  - task: "Remove RSVP buttons from individual ceremony sections"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Removed individual RSVP button, modal, and count cards from Christian wedding section"
+
+  - task: "Remove RSVP buttons from individual ceremony sections"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Removed individual RSVP button, modal, and count cards from Hindu wedding section"
+
+  - task: "Create unified RSVP component with ceremony selection"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/UnifiedRSVP.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Created unified RSVP component with ceremony selection options: both ceremonies, Christian only, Hindu only, or none. Handles multiple API calls for both ceremonies selection."
+
+  - task: "Replace Forever Together parallax with RSVP section"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/WeddingApp.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Replaced the Forever Together parallax section content with prominent RSVP button following website theme"
+
+  - task: "Improve Directions button styling"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/ChristianWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Enhanced Directions button with gradient background, better hover effects, and improved visibility"
+
+  - task: "Improve Directions button styling"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/components/HinduWedding.jsx"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+        - working: "NA"
+          agent: "main"
+          comment: "Enhanced Directions button with gradient background, better hover effects, and improved visibility"
+
   - task: "RSVP form connection to backend"
     implemented: true
     working: "NA"
