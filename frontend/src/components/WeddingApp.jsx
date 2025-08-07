@@ -244,17 +244,12 @@ const WeddingApp = () => {
         <HinduWedding />
       </section>
 
-      {/* Parallax Section 3 - Forever Together */}
+      {/* RSVP Section - Replaces "Forever Together" parallax */}
       <ParallaxSection 
         backgroundImage="/images/traditional3.jpg"
         className="flex items-center justify-center"
       >
-        <div className="text-center text-gray-800 px-6">
-          <h2 className="text-5xl font-light mb-6 animate-fade-in-up text-gray-900">Forever Together</h2>
-          <p className="text-xl font-light animate-fade-in-up-delay text-gray-700 max-w-3xl mx-auto">
-            As we embark on this new chapter, we carry with us the blessings of family and friends
-          </p>
-        </div>
+        <UnifiedRSVP />
       </ParallaxSection>
 
       <section id="send-message" className="py-16 bg-white">
