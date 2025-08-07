@@ -122,6 +122,9 @@ backend:
         - working: true
           agent: "testing"
           comment: "Updated RSVP functionality thoroughly tested after dietary field removal. All tests passed: 1) Christian/Hindu ceremony submissions working correctly 2) SheetDB API integration confirmed with HTTP 201 responses 3) Proper validation for missing required fields (422 status) 4) Error handling for invalid JSON working 5) Special characters and long data handled correctly 6) httpcore dependency issue resolved - no more import errors in logs. RSVP API is fully functional with simplified form structure."
+        - working: true
+          agent: "testing"
+          comment: "Comprehensive testing completed for unified RSVP backend functionality. Ran 11 test cases including: 1) Basic Christian/Hindu ceremony submissions - both working perfectly 2) Multiple consecutive submissions test (simulating unified RSVP 'both ceremonies' selection) - completed in 5.88 seconds, both requests successful 3) Validation testing with missing fields - proper 422 responses 4) Invalid JSON handling - proper error responses 5) Special characters and long data handling - working correctly 6) Different attending values (yes/no/maybe/YES/No) - all accepted 7) SheetDB integration confirmed working with success responses. Backend is fully ready to handle the new unified RSVP frontend that sends 1-2 API calls depending on ceremony selection."
 
   - task: "Weather API integration endpoint"
     implemented: true
