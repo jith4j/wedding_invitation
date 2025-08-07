@@ -174,12 +174,7 @@ const ChristianWedding = () => {
           </div>
         </div>
 
-        {/* RSVP Status */}
-        <div className="mt-16 text-center">
-          <div className="bg-gray-100 border border-gray-200 rounded-2xl p-6 inline-block">
-            <p className="text-gray-700 font-light">4 Going • 1 Maybe</p>
-          </div>
-        </div>
+        {/* RSVP count removed - unified RSVP section will show consolidated data */}
 
       </div>
 
